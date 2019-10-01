@@ -26,19 +26,32 @@ public class Propiedades extends Fragment {
     ViewPager viewPager;
     TabLayout tabLayout;
     AppBarLayout appBarLayout;
-
+    int contador =0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_propiedades, container, false);
-        viewPager= view.findViewById(R.id.viewPager);
-        appBarLayout = view.findViewById(R.id.appBar);
-        tabLayout=new TabLayout(getContext());
-        appBarLayout.addView(tabLayout);
+        ViewGroup contenedor =(ViewGroup)container.getParent();
 
-        Fragment propiedad1 = new propiedad_item();
+
+            appBarLayout =((ViewGroup)contenedor.getParent()).findViewById(R.id.appBar );
+            tabLayout=new TabLayout(getActivity());
+            appBarLayout.addView(tabLayout);
+
+
+
+
+
+
+        viewPager= (ViewPager)view.findViewById(R.id.viewPager);
+
+
+
         ViewPageAdapter vpa = new  ViewPageAdapter(getFragmentManager());
-        vpa.addFragment(propiedad1,"San Martin");
+
+        vpa.addFragment(new propiedad_item(),"prop1");
+        vpa.addFragment(new propiedad_item(),"prop2");
+
         viewPager.setAdapter(vpa);
         tabLayout.setupWithViewPager(viewPager);
 

@@ -9,18 +9,16 @@
     tools:context=".Propiedades">
 
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
-
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="187dp"
         tools:layout_editor_absoluteY="306dp" />
+
+
+
+
 
 
 </LinearLayout>
